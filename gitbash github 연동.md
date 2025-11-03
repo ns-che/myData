@@ -1,4 +1,4 @@
-# GitBash GitHub 연동 방법 정리
+# 깃 허브 사용법 정리
 
 ## 1. git bash 설치
 <br>
