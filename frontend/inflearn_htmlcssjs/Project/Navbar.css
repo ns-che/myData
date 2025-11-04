@@ -66,13 +66,13 @@ ul{
 
 
 .header-area.navbar-fixed{
-    position:fixed
+    position:fixed;
 }
 
 .header-area>.navbar {
     /* 전체 공간 100% + 여백 좌우 60px(총 120px) - 120px */
     width: calc(100% - 120px);
-    min-height: 70px;
+    /* min-height: 70px; */
     /* 여백 좌우 60px */
     margin: 0 60px;
     overflow: hidden;
@@ -198,6 +198,9 @@ ul{
         padding: 0 20px;
         color: black;
     }
+
 }
-
-
+#test{
+    background-color: orange;
+    height: 2000px;
+}
