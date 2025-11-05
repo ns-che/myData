@@ -1,0 +1,24 @@
+1. html
+이미지 불러오기
+<div>
+	<img src="이미지경로.jpg">
+</div>
+
+2. css
+transition : css 속성값이 변활때 부드럽게 변화하도록 설정
+
+3. js
+1) class 이름을 조작하여 css 영향을 받거나 안받거나를 조정
+className.replace(' active', '');
+className += ' active';
+
+2) bind 활용
+addEventListener("click", plusImageSlides.bind(null, -1));
+=> plusImageSlides함수에 -1값 전달(null은 this를 뜻함)
+
+3) 타이머
+var imageTimer = setInterval(imageSlideTimer, 3000);
+=> 3초마다 imageSlideTimer 호출
+
+사용자에게 편안한 경험
+: 사용자가 원하는대로 동작하는 UI
