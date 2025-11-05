@@ -1,0 +1,1 @@
+transition: all 0.5s ease;은 transition: 0.5s ease;와 같은 의미
