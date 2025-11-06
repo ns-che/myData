@@ -88,3 +88,83 @@ document.getElementById("secondDot").addEventListener("click", currentImageSlide
 document.getElementById("thirdDot").addEventListener("click", currentImageSlide.bind(null, 3));
 document.getElementById("forthDot").addEventListener("click", currentImageSlide.bind(null, 4));
 
+/* PORTFOLIO AREA */
+
+filterSelection("all"); // 처음에 all 항목 선택된 상태로 시작
+
+function filterSelection(id) {
+    var x, i;
+
+    x = document.getElementsByClassName("listItem");
+    for(i=0; i<x.length; i++){
+        removeClass(x[i], "active");
+    }
+    addClass(document.getElementById(id), "active");
+
+    x = document.getElementsByClassName("filterItem");
+    if(id === "all") id = ''; // all이면 공백으로 변경 => 모든 항목 표시하기 위함
+    for(i=0; i<x.length; i++){
+        removeClass(x[i], "show");
+        // 존재하거나 공백이면 0 이상
+        if(x[i].className.indexOf(id) > -1){
+            addClass(x[i], "show");
+        }
+    }
+}
+
+function addClass(element, name) {
+    if(element.className.indexOf(name) == -1){
+        element.className += " " + name;
+    }
+    //if(!element.classList.contains(name)) element.classList.add(name);
+}
+function removeClass(element, name) {
+    var arr;
+    arr = element.className.split(" ");
+
+    while(arr.indexOf(name) > -1){
+        arr.splice(arr.indexOf(name), 1); // name이 존재하는 인덱스에서 1개 요소 제거(해당 클래스명 제거)
+    }
+    element.className = arr.join(" ");
+    //if(element.classList.contains(name)) element.classList.remove(name);
+}
+
+document.getElementById("all").addEventListener("click", filterSelection.bind(null, "all"));
+document.getElementById("uiux").addEventListener("click", filterSelection.bind(null, "uiux"));
+document.getElementById("java").addEventListener("click", filterSelection.bind(null, "java"));
+document.getElementById("db").addEventListener("click", filterSelection.bind(null, "db"));
+
+function viewPortfolio(event){
+    var polyNode = event.target;
+
+    if(polyNode.tagName.toLowerCase() == "i"){
+        polyNode = polyNode.parentNode; // i 태그의 부모 요소(overlay 클래스 요소)로 변경
+    }
+    
+    var overlayNode = polyNode;
+    var imageNode = overlayNode.nextElementSibling; // overlay 클래스 요소의 다음 태그(img 태그)
+    
+    var itemNode = overlayNode.parentNode; 
+    var mainNode = itemNode.nextElementSibling;
+    var subNode = mainNode.nextElementSibling;
+    var textNode = subNode.nextElementSibling;
+    
+    document.getElementById("modalImage").src = imageNode.src;
+    document.getElementById("modalMain").innerHTML = mainNode.innerHTML;
+    document.getElementById("modalSub").innerHTML = subNode.innerHTML;
+    document.getElementById("modalText").innerHTML = textNode.innerHTML;
+
+    document.getElementById("portfolioModal").style.display = "block";
+
+
+}
+
+document.getElementById("modalClose").addEventListener("click", function(){
+    document.getElementById("portfolioModal").style.display = "none";
+});
+
+var filterItems = document.getElementsByClassName("overlay");
+
+for(var i=0; i<filterItems.length; i++){
+    filterItems[i].addEventListener("click", viewPortfolio);
+}

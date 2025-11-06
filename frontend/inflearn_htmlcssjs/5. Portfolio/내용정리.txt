@@ -1,0 +1,74 @@
+1. CSS
+calc 계산을 할때는 항상 띄어쓰기를 해야함
+calc(100%-60px) => invaild property value => 속성 무시됨
+calc(100% - 60px) => 작동함
+
+정가운데 위치하게 하는 방법
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+absolute 포지셔닝은 부모 요소를 기준으로 오버레이를 배치하여 이미지 영역 전체를 덮을 수 있게 함(겹치게 배치할 때 활용)
+
+클릭하지 않았을때는 안보이게 처리하는 방법
+1. css상으로 @media 활용 display: none에서 display:~로 변경
+=> css가 지원하는 상호작용에 활용(화면 크기조정, 드래그(호버), 포커스) 
+2. js상으로 classList.add, classList.remove, classList.toggle을 통해 클래스 추가/삭제 => css로 조절(height, display)
+=> css가 지원하지 않는 상호작용에 활용(버튼 누르기 등)
+
+ex) 항목을 보이거나 숨기기 위해 CSS의 display 속성을 none 또는 inline-block 등으로 변경. JavaScript로 'show' 클래스를 추가하여 제어
+
+transition animation(@keyframe 활용) 구분
+transition: 나타나고 사라짐에 활용되는 애니메이션 효과
+animation: 정교하게 값을 컨트롤하기 위한 애니메이션 효과
+
+모달과 팝업페이지
+모달: 페이지 활용을 위해서는 사용자 상호작용 강제함으로 이목집중
+팝업: 사용자 상호작용 선택하게 함
+=> 사용자 입장에서는 결국 최종적으로는 모달이나 팝업페이지나 닫아야하므로 똑같은 느낌을 받게됨
+모달만들기
+1) 배경 클릭 못하게 막기
+#portfolioModal{
+    display: none; => 처음 화면에 보여서는 안됨
+    position: fixed; => 고정된 위치
+    z-index:100; => 제일 위쪽에 표시되도록
+    width:100% => 클릭 못하게
+    height:100% => 클릭 못하게
+    background-color: rgba(0,0,0,0.9) => 투명하게 배경이 보이게는 만들기 위해
+}
+
+2. Js
+element.className // 해당 태그의 전체 클래스명
+className.indexOf(id) //className 문자열에서 id 문자열이 공백이거나 존재한다면(빈공간 구분) 0이상 값
+arr.splice(arr.indexOf(name), 1); // name이 존재하는 인덱스에서 1개 요소 제거(해당 클래스명 제거)
+
+split과 join
+split("구분자") => 문자열을 구분자로 구분하여 요소들이 들어있는 배열 생성
+join("구분자") => 배열을 구분자를 사이사이로 넣고 문자열 조합
+
+클릭이벤트 주의
+div 태그와 그 안에있는 태그(ex) 이미지 태그)도 클릭 대상임
+addEventListener("click", viewPortfolio); function viewPortfolio(event) event.target => 클릭 대상 태그
+event.target.parentNode => 클릭 대상의 부모 태그
+
+
+parentNode // 부모 태그
+nextElementSibling; // 다음 형제 태그
+
+활용
+var itemNode = overlayNode.parentNode; 
+var mainNode = itemNode.nextElementSibling;
+var subNode = mainNode.nextElementSibling;
+var textNode = subNode.nextElementSibling;
+
+현재 태그 내용 다른 태그에다가 복사 붙여넣기
+document.getElementById("modalImage").src = imageNode.src;
+document.getElementById("modalMain").innerHTML = mainNode.innerHTML;
+document.getElementById("modalSub").innerHTML = subNode.innerHTML;
+document.getElementById("modalText").innerHTML = textNode.innerHTML;
+
+익명함수
+function(){}
+document.getElementById("modalClose").addEventListener("click", function(){
+    document.getElementById("portfolioModal").style.display = "none";
+});
