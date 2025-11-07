@@ -168,3 +168,48 @@ var filterItems = document.getElementsByClassName("overlay");
 for(var i=0; i<filterItems.length; i++){
     filterItems[i].addEventListener("click", viewPortfolio);
 }
+
+/* REVIEW AREA */
+var reviewSlideIndex = 0;
+
+function reviewSlideTimer(){
+    plusReviewSlides(1);
+}
+var reviewTimer = setInterval(reviewSlideTimer, 3000); // 3초마다 리뷰 슬라이드 넘기기
+
+function plusReviewSlides(n){
+    clearInterval(reviewTimer); // 기존 타이머 제거
+    reviewTimer = setInterval(reviewSlideTimer, 3000); // 새로운 타이머 설정
+    showReviewSlides(reviewSlideIndex += n);
+}
+function showReviewSlides(n){
+    var i;
+    var review_slides = document.getElementsByClassName("review-slide"); // 모든 리뷰 슬라이드 요소들
+    const SHOWPAGE = 3; // 한 번에 보여줄 리뷰 슬라이드 개수
+
+    if(n >= review_slides.length - SHOWPAGE){
+        reviewSlideIndex = 0; // 처음으로 돌아감
+    }
+    if(n < 0){
+        reviewSlideIndex = review_slides.length - SHOWPAGE; // 마지막으로 감
+    }
+
+    for(i=0; i<review_slides.length; i++){
+        removeClass(review_slides[i], "show");
+        removeClass(review_slides[i], "res-show");
+        addClass(review_slides[i], "hide");
+    }
+
+    removeClass(review_slides[reviewSlideIndex], "hide");
+    addClass(review_slides[reviewSlideIndex], "res-show");
+
+    var reviewnextSlideIndex = reviewSlideIndex;
+    for(i=1; i<SHOWPAGE; i++){
+        reviewnextSlideIndex = (reviewSlideIndex + i) % review_slides.length;
+        removeClass(review_slides[reviewSlideIndex + i], "hide");
+        addClass(review_slides[reviewSlideIndex + i], "show");
+    }
+}
+
+document.getElementById("reviewPrev").addEventListener("click", plusReviewSlides.bind(null, -1));
+document.getElementById("reviewNext").addEventListener("click", plusReviewSlides.bind(null, 1));

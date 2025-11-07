@@ -80,9 +80,18 @@ git remote remove 별명<br>
 git push origin http://.git<br>
 <br>
 
+## 9. 고급 설정
+.gitignore 파일: git 추적 대상 제외<br>
+협업용, 일반 프로젝트 .gitignore은 보통 공개<br>                  
+혼자 쓰는 비공개/보안 프로젝트 git rm --cached .gitignore 후 로컬 유지<br>
+
+git rm --cached .gitignore
+
 ##### 옵션주기<br>
 git push -u origin http://.git => 이후에는 git push만 해도 됨<br>
 <br>
+
+
 
 ## 자주 하는 실수 & 해결법<br>
 README 있는 저장소에 push => "rejected, non-fast-forward"<br>
