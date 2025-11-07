@@ -1,0 +1,2 @@
+footer란 header가 위치한 navbar과 정반대 느낌
+페이지의 맨 아래쪽에 위치함
