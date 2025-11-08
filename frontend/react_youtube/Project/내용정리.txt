@@ -1,0 +1,70 @@
+1. 프로젝트 생성
+1) node.js 설치
+2) 프로젝트 폴더 만들기
+3) vscode 편집기로 터미널 열기 => 효율적인 코딩을 위해
+4) npx create-react-app 프로젝트명(현재폴더인 경우 .입력)
+CRA(create react app) vs Vite => Vite가 더 빠르고 현재 개발 표준이라고 함(npm create vite@latest)
+5) public 폴더 쓸데없는 파일 날리기(.png, .json)
+png -> svg로 대체
+복잡한 이미지(사진)가 아닌 경우(UI, 아이콘, 간단한 일러스트) 대체 가능
+css 변경 가능(애니메이션, 색상, 크기), 네트워크 요청 줄일 수 있음
+vscode편집: 미리보기 이미지 -> ctrl+shift+p -> Reopen Editor With Text Editor
+6) index.html: 페이지 진입시 가장 먼저 보이는 페이지
+전체 내용 삭제
+스니펫활용: !누르고 엔터하면 자동으로 디폴트 html 코드 생성
+
+vscode tab키가 띄어지는 정도 변경하는법
+ctrl+shift+p -> indent Using Spaces -> 숫자선택(적절한 숫자가 가독성을 높임)
+
+HTML 기본 태그
+<!DOCTYPE html>: 브라우저가 HTML을 어떻게 해석(렌더링)할지 알려줌(Standards Mode(최신 표준) vs Quirks Mode(옛날 과거 브라우저 호환용) vs Almost Standards Mode(Quirks Mode에 일부 레이아웃만 표준)) => HTML버전은 상관없이 모드는 3가지 존재
+최신HTML을 위해서는 <!DOCTYPE html>활용
+태그가 없을경우 Quirks Mode
+
+<html lang="ko">: 검색엔진이나 이 정보를 보고 콘텐츠 관리(ex) 한국 사용자 우선 노출) 를 하고, 브라우저에서 이 정보를 보고 폰트, 맞춤법, 음성 지원(ex) 한국 발음 tts)을 함
+<meta name="viewport" content="width=device-width, initial-scale=1.0">: 다양한 기기에서 화면 크기에 맞춰 웹페이지가 보이도록 설정 + 반응형 웹(css의 @media 쿼리 활용 가능해짐)
+<meta name="keyword" content="keyword1, keyword2, 키워드3, kword4">: 웹 페이지 키워드 지정. 검색 엔진 최적화(SEO: Search Engine Optimization)에 사용 => 현재는 주요 외부검색엔진에서 사용되지 않음(검색 순위 조작으로 인해) => 내부 검색엔진, 문서정리에는 활용 가능
+<meta name="description" content="">: 웹 페이지 간단한 설명. 검색 결과(SERP: Search Engine Result Page) 요약문(스니펫) 표시에 활용
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />: 브라우저에게 대표 아이콘 알려주는 데 활용됨
+파비콘(favicon) = favorite icon = 웹사이트를 대표하는 작은 아이콘
+확장자    MIME(Multipurpose Internet Mail Extensions) 타입
+PNG	image/png
+JPEG	image/jpeg
+ICO	image/x-icon
+SVG	image/svg+xml => svg(Scalable Vector Graphics)는 XML(Extensible Markup Language) 기반의 이미지 형식
+웹 브라우저는 확장자가 아니라 MIME 타입으로 파일 종류를 인식함
+
+<link> => 리소스를 연결하는 태그. 브라우저가 파일의 성격을 알 수 없음(이미지인지 스타일시트인지)
+=> link는 브라우저가 리소스를 활용할 수 있도록 이미 정해진 이름에 매핑시키는 역할이다.
+
+7) 폴더
+node_modules: 패키지, 라이브러리 등
+public: 브라우저에서 읽을 수 있는 부분
+src: 숨겨진 부분(의존성 관리, 앱 동작 부분 등
+
+8) src 폴더 쓸데없는 파일 날리기
+App.js, index.js 제외하고 다 날리기
+App.js: 어플 구조 기능 정의
+index.js: 진입점, DOM에 렌더링 하는 역할
+
+9) 확장프로그램
+ES7+ React/Redux/React-Native snippets : 리액트 코딩시 유용한 스니펫들 제공
+Material Icon Theme : 파일 관리시 가독성 있게 관리
+
+10) App.js
+function App(){return()} vs const App = ()=>{return()} 일반함수(Function Declaration) vs 화살표 함수(Arrow Function)의 차이
+=> 호이스팅(Hoisting: 국기게양할때 그 게양)과 this가 참조하는 위치가 다름
+호이스팅: 함수 선언전 호출 가능한지 여부 => 화살표 함수는 변수에 할당하는 형태라서 함수가 존재하는지 인식할 수 없음
+this 참조 위치: 화살표 함수는 this를 만들지 않고 호출된 위치에서의 this를 활용
+
+11) index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root')); => index.html안에 있는 <div id="root"> 안에 적용
+root.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>
+);
