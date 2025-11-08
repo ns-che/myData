@@ -1,0 +1,37 @@
+ctrl+a 전체 선택
+ctrl+f 단어 찾을때 활용
+ctrl+h 단어 수정할때 활용
+shift+alt+f 자동정렬
+ctrl+alt+↕ 한번에 수정 => 화면이 뒤집어질경우 바탕화면 오른쪽 마우스->그래픽 옵션->바로가기키->사용안함
+ctrl+x 한줄 잘라내기(복사됨)
+alt+shift+↕ 현재 선택된 줄(선택된 영역이 아닌 영역이 포함된 줄) 복사됨
+ctrl+shift+e 디렉토리로 포커스 이동
+
+ctrl+shift+p vscode 기능
+indent using space : 탭 누를때 띄어지는 거리 조정
+View:Reopen Editor with Text Editor : svg 수정할때 용이, 바이너리 데이터 텍스트에디터로 열기
+Preferences: Open KeyBoard Shortcuts (JSON): 키보드 단축키 추가
+1. 디렉토리 안에 새파일/새폴더 추가
+Mac
+[{
+    "key": "cmd+n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus"
+  },
+{
+    "key": "cmd+shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+}]
+Window
+[{
+    "key": "ctrl+n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus"
+  },
+{
+    "key": "ctrl+shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+}]
+

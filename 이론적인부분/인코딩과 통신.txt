@@ -1,0 +1,15 @@
+ㅇ 유니코드
+1) UTF-8 웹 표준 권장
+2) BOM : Byte Order Mark - 파일의 인코딩과 바이트순서(Big Endian(BE), Little Endian(LE)) 알려주는 규약
+웹 개발에서는 BOM 없이 쓰임
+
+ㅇ 통신
+1) BE, LE
+BE: 상위 바이트 우선
+LE: 하위 바이트 우선
+우선된 바이트(MSB = Most Significant Byte)
+우선순위가 가장 떨어지는 바이트(LSB = Least Significant Byte)
+
+네트워크에서는 BE로 통일 => TCP/IP HTTP UDP DNS 같은 전송 프로토콜에서 그렇게 정의되어 있기 때문(다양한 컴퓨터가 똑같이 해석할 수 있도록)
+CPU - Intel은 LE로 데이터 저장
+4byte = 0x01020304값 => 메모리에 1byte 0x04 0x03 0x02 0x01 형태로 저장

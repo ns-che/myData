@@ -1,0 +1,4 @@
+ctrl+w 현재 탭 닫기
+ctrl+t 새탭
+ctrl+n 새창 ctrl+shift+n 시크릿창
+ctrl+tab 다음탭 ctrl+shift+tab 이전탭 ctrl+숫자(1은 첫번째탭 9는 마지막탭) 해당 탭으로 이동
