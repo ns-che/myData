@@ -114,3 +114,6 @@ img, fonts, scss 폴더 생성
 @import 'setting/common'; 공통 css
 
 => _이름.scss 형태로 작성할 경우 partial 파일임 => 빌드시 따로 CSS 파일로 변환되지않고 내용이 import된 곳에 병합됨
+
+4) index.js
+import './assets/scss/style.scss';

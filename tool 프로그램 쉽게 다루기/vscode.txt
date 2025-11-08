@@ -1,11 +1,17 @@
+ctrl+클릭 : 코드 경로 부분으로 이동 ex) src/style.css 를 클릭할 경우 해당 파일 수정으로 이동함
+alt+클릭 : placeholder 클릭된 위치에 추가
 ctrl+a 전체 선택
 ctrl+f 단어 찾을때 활용
 ctrl+h 단어 수정할때 활용
-shift+alt+f 자동정렬
-ctrl+alt+↕ 한번에 수정 => 화면이 뒤집어질경우 바탕화면 오른쪽 마우스->그래픽 옵션->바로가기키->사용안함
+shift+alt+f 선택된 부분 자동정렬
+ctrl+alt+↕ placeholder 추가 => 화면이 뒤집어질경우 바탕화면 오른쪽 마우스->그래픽 옵션->바로가기키->사용안함
 ctrl+x 한줄 잘라내기(복사됨)
-alt+shift+↕ 현재 선택된 줄(선택된 영역이 아닌 영역이 포함된 줄) 복사됨
-ctrl+shift+e 디렉토리로 포커스 이동
+alt + ↕ 현재 선택된 줄 (선택된 영역이 아닌 영역이 포함된 줄) 이동
+alt+shift+↕ 현재 선택된 줄(선택된 영역이 아닌 영역이 포함된 줄) 복사
+ctrl+shift+e 탐색기 쪽으로 포커스 이동
+ctrl+` 터미널 열기
+
+참고: https://inpa.tistory.com/entry/VS-Code-%E2%8F%B1%EF%B8%8F-%EC%9C%A0%EC%9A%A9%ED%95%9C-%EB%8B%A8%EC%B6%95%ED%82%A4-%EC%A0%95%EB%A6%AC
 
 ctrl+shift+p vscode 기능
 indent using space : 탭 누를때 띄어지는 거리 조정
