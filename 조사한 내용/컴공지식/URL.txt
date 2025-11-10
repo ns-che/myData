@@ -1,0 +1,5 @@
+Uniform Resource Identifier
+
+[프로토콜]://[IP주소]:[포트번호]
+여기서 쓰는 프로토콜은 OSI 7계층(응용) 프로토콜을 뜻함
+ex) http, ftp, mongodb
