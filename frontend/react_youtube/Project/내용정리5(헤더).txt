@@ -1,0 +1,16 @@
+1. 구조
+1) 로고 : <h1> 태그 사용 등으로 강조
+2) 메뉴판
+
+const Header = () => {
+    return (
+        <header id='header' role="banner">
+            <div className="header__logo"></div>
+            <div className="header__menu"></div>
+        </header>
+    )
+}
+
+react icon 패키지 사용
+
+<CiBaseball />

@@ -38,6 +38,6 @@ export default App;
 4. css 수정
 1) src/assets/scss/section 폴더에 _layout.scss 생성
 id로 고유하게 작업
-#header{}
+#header{} -> 스크롤에 관계없이 화면에 고정되어 있으므로 fixed
 #main{}
 #footer{}
