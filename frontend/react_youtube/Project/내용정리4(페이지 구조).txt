@@ -1,0 +1,43 @@
+3단 구조: header, main, footer
+헤더는 꼭 위쪽에만 있으란 법은 없음 => 사이드에 있는 경우도 존재
+
+1. src/components 폴더 생성
+
+2. src/components/section 폴더 생성
+컴포넌트 만들기
+Header.jsx, Main.jsx Footer.jsx
+
+Header.jsx -> 태그를 header로 <header id='header' role="banner">Header</header>
+role은 웹표준 지켜주기 위한 설정 => 역할 = 배너
+main.jsx -> 태그를 main으로
+Footer.jsx -> 태그를 footer로. 역할 = 사이트의 모든 정보를 보여줌
+
+3. App.js
+...
+import Header from "./components/Header"
+import Main from "./components/Main"
+import Footer from "./components/Footer"
+
+const App = () => {
+  return (
+    <>
+      <BrowserRouter>
+        <Header /> => Header
+        <Main> => Main Start
+        <Routes>
+          ...
+        </Routes>
+        </Main> => Main End
+        <Footer /> => Footer
+      </BrowserRouter>
+    </>
+  )
+}
+export default App;
+
+4. css 수정
+1) src/assets/scss/section 폴더에 _layout.scss 생성
+id로 고유하게 작업
+#header{}
+#main{}
+#footer{}

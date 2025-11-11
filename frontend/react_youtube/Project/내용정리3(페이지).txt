@@ -46,3 +46,17 @@ const App = () => {
 
 2. src/pages폴더 => 위에서 작성한 페이지들을 실제 파일로(.jsx => html + xml)
 Home.jsx
+
+3. app.js import
+import Home from './pages/Home'
+import Today from './pages/Today'
+import Developer from './pages/Developer'
+import Webd from './pages/Webd'
+import Website from './pages/Website'
+import Gsap from './pages/Gsap'
+import Port from './pages/Port'
+import Youtube from './pages/Youtube'
+import Channel from './pages/Channel'
+import Video from './pages/Video'
+import Search from './pages/Search'
+import Not from './pages/Not'

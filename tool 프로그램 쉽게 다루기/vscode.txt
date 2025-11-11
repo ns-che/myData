@@ -57,3 +57,15 @@ ctrl+d는 멀티커서 생성으로 바인딩 되어있으므로 삭제후 순�
 
 ctrl+n 파일 생성시 기본 확장자 지정
 ctrl+,(설정) -> defaultLanguage 검색 -> .jsx(입력하고 싶은 확장자) 입력
+
+ㅇ Convert Indentation to Spaces, Convert Indentation to Tabs
+코드 복붙할때 들여쓰기를 탭으로 할지 스페이스로 할지 정함
+
+ㅇ Preferences: Configure User Snippets -> 적용할 파일 형태 선택
+{
+    "Margin auto 0":{ => ID
+        "prefix": "mg", => mg라는 키워드 입력시
+        "body": "margin auto 0;$0", => margin auto 0; 작성후 placeholder의 위치가 $0쪽으로 감
+        "description": "margin auto 0"  => 설명
+    }
+}

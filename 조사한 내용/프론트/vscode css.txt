@@ -1,0 +1,58 @@
+1. 스니펫
+l0 => left:0;
+t0 => top:0;
+w260 => width: 260px;
+h100p => height:100%;
+z100 => z-index: 100
+bgc => background-color: [수정가능]; #000 검정색
+mw2000 => min-width:2000px;
+maw2000 => max-width:2000px;
+m10 => margin:10px;
+p10 => padding:10px;
+pl10 => padding-left:10px;
+pr10 => padding-right:10px;
+ta => text-align:left[placeholder위치];
+tar => text-align:right;
+tac => text-align:center;
+
+커스텀 스니펫
+tool 프로그램 쉽게 다루기/vscode.txt 읽기
+
+2. 값 단위
+1) 크기 단위: width, height, max-width, max-height
+- 절대 단위
+px(픽셀), cm, in
+
+- 상대 단위
+%: 부모태그 기준 백분율 => 브라우저 크기에 따라 변동되지 않음
+vw(viewport width): 웹 브라우저 너비 기준 백분율 설정 => 브라우저 크기에 따라 변동
+vh(viewport height): 웹 브라우저 높이 기준 백분율 설정 => 브라우저 크기에 따라 변동
+vmin: 웹 브라우저 너비 높이 중 작은 것 기준 백분율 설정 => 브라우저 크기에 따라 변동
+vmax: 웹 브라우저 너비 높이 중 큰 것 기준 백분율 설정 => 브라우저 크기에 따라 변동
+em
+
+2) 위치 단위: position(top, left, right, bottom), padding, margin
+px, em, %
+auto: 남는 공간을 브라우저가 자동 계산 => 브라우저 크기에 따라 변동
+=> 보통 margin 0 auto; 형태로 많이 씀 => 상하 여백 없음, 좌우 여백은 (브라우저 크기-블록 크기)/2 양옆 분배 => 수평 가운데 정렬
+
+참조: https://aram5.tistory.com/9
+
+3. 포지션
+static	기본값, normal flow, top/left/right/bottom 이용불가
+relative	자기 자리 기준 이동, normal flow
+absolute	부모 기준 절대 위치, normal flow 아님
+fixed	뷰포트 기준 절대 위치, normal flow 아님 => 스크롤 내리거나 해도 딱 붙어있음
+
+normal flow : 기본 규칙대로 순서에 맞춰 배치
+block: 수직으로 쌓임(크기(width, height) 지정 가능)
+inline: 수평으로 이어짐(크기 지정 불가) => margin padding은 글자 블록(line-box) 기준(line-height - https://velog.io/@ursr0706/line-height-%EC%86%8D%EC%84%B1
+inline-block : 수평으로 이어짐(크기 지정 가능)
+
+디폴트 값
+div	block
+p	block
+span	inline
+img	inline-block
+section	block
+button	inline-block
