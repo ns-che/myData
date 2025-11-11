@@ -88,6 +88,8 @@ swiper : 이미지 슬라이드
 
 13) git 관리 = 형상관리 프로그램
 버전 충돌시 .git 파일 제거후 다시 하면 거의 해결됨
+branch를 여러개 두어서 version 관리
+
 
 14)  SCSS (sass 패키지)
 css 전처리기 => css 작성 효율 => 시간단축
@@ -118,34 +120,3 @@ _이름.scss 형태로 작성할 경우 partial 파일임 => 빌드시 따로 CS
 
 4) index.js
 import './assets/scss/style.scss';
-
-웹폰트(Web Fonts): 사용자 컴퓨터에 폰트 없어도 다운받고 바로 사용 가능 => 특정 폰트 사용하려면 해당 기술 필요
-TTF, OTF: 파일크기 큼
-WOFF: 웹 페이지 최적
-EOT: 익스플로러
-
-5) _fonts.scss
-@font-face {
-    font-family: "[폰트종류]";
-    font-weight: 100;
-    font-style: normal;
-    src: url("../../fonts/[폰트이름].woff") format("woff");
-    font-display: swap;
-}
-
-6) _vars.scss
-변수설정, 변수의 초기값설정(ex) 폰트 -> @media태그로 화면변화에 따른 초기값도 설정)
---변수명: 값(ex) "abc", #fff);
-
-7) _reset.scss
-초기 화면 + 리셋 화면 설정
-브라우저 간 일관된 스타일
-=> HTML 요소와 레이아웃(before,after,blind 등) 초기속성값 설정
-
-@import 'setting/fonts'; 폰트
-@import 'setting/vars'; 변수
-@import 'setting/reset';
-@import 'setting/mixin';
-@import 'setting/common'; 
-
-변수를 뜻하는 vars가 앞에 위치하므로 reset, mixin, common은 변수 사용이 자유롭다

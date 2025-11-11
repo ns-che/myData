@@ -1,0 +1,12 @@
+1. git fork된거 fetch후 merge 그리고 최신 데이터 받아오는 법
+
+2. VSCode
+{
+        "key": "ctrl+n",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus"
+}
+when과 command의 동작 수정
+1) ctrl+n 눌렀을때 .jsx이름이 작성된 형태로 생성
+2) ctrl + art + 클릭을 했을때 해당 문자열을 감지하고 특정 경로에다가 해당 이름의 파일을 생성하고 기본적인 코드까지 작성되는 단축키 만들기
+3) 파일에 따라 다른 단축키가 적용

@@ -1,0 +1,4 @@
+1. 분명히 문제 없는 코드인데 문제가 있다고 나옴
+Already included file name 'c:/Users/user/project/frontend/react_youtube/Project/web-youtube/src/pages/Youtube.jsx' differs from file name 'c:/Users/user/project/frontend/react_youtube/Project/web-youtube/src/pages/youtube.jsx' only in casing. The file is in the program because: Imported via './pages/Youtube' from file 'c:/Users/user/project/frontend/react_youtube/Project/web-youtube/src/App.js' Root file specified for compilationts(1261)
+=> 캐싱(casing)이 잘못된 상태임. 껐다 키면 해결
+

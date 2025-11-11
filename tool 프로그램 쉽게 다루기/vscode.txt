@@ -1,23 +1,26 @@
 ctrl+클릭 : 코드 경로 부분으로 이동 ex) src/style.css 를 클릭할 경우 해당 파일 수정으로 이동함
 alt+클릭 : placeholder 클릭된 위치에 추가
+
 ctrl+a 전체 선택
 ctrl+f 단어 찾을때 활용
-ctrl+h 단어 수정할때 활용
+ctrl+h 단어 한번에 다른 단어로 수정할때 활용(페이지가 큰 경우)
+ctrl+shift+l 단어 한번에 다른 단어로 수정할때 활용(페이지가 작은 경우)
+
 shift+alt+f 선택된 부분 자동정렬
 ctrl+alt+↕ placeholder 추가 => 화면이 뒤집어질경우 바탕화면 오른쪽 마우스->그래픽 옵션->바로가기키->사용안함
 ctrl+x 한줄 잘라내기(복사됨)
 alt + ↕ 현재 선택된 줄 (선택된 영역이 아닌 영역이 포함된 줄) 이동
 alt+shift+↕ 현재 선택된 줄(선택된 영역이 아닌 영역이 포함된 줄) 복사
 ctrl+shift+e 탐색기 쪽으로 포커스 이동
-ctrl+` 터미널 열기
+
 
 참고: https://inpa.tistory.com/entry/VS-Code-%E2%8F%B1%EF%B8%8F-%EC%9C%A0%EC%9A%A9%ED%95%9C-%EB%8B%A8%EC%B6%95%ED%82%A4-%EC%A0%95%EB%A6%AC
 
 ctrl+shift+p vscode 기능
-indent using space : 탭 누를때 띄어지는 거리 조정
-View:Reopen Editor with Text Editor : svg 수정할때 용이, 바이너리 데이터 텍스트에디터로 열기
-Preferences: Open KeyBoard Shortcuts (JSON): 키보드 단축키 추가
-1. 디렉토리 안에 새파일/새폴더 추가
+ㅇ indent using space : 탭 누를때 띄어지는 거리 조정
+ㅇ View:Reopen Editor with Text Editor : svg 수정할때 용이, 바이너리 데이터 텍스트에디터로 열기
+ㅇ Preferences: Open KeyBoard Shortcuts (JSON): 키보드 단축키 추가
+디렉토리 안에 새파일/새폴더 추가
 Mac
 [{
     "key": "cmd+n",
@@ -40,4 +43,17 @@ Window
     "command": "explorer.newFolder",
     "when": "explorerViewletFocus"
 }]
+순차적인 수정
+[
+  {
+    "key": "ctrl+d",
+    "command": "editor.action.nextMatchFindAction",
+    "when": "editorFocus"
+  }
+]
+ㅇ Preferences: Open KeyBoard Shortcuts
+단축키 지정 및 삭제 => 현재 내용 수정은 불가해보임
+ctrl+d는 멀티커서 생성으로 바인딩 되어있으므로 삭제후 순차적 수정 기능으로 바꿨다.
 
+ctrl+n 파일 생성시 기본 확장자 지정
+ctrl+,(설정) -> defaultLanguage 검색 -> .jsx(입력하고 싶은 확장자) 입력

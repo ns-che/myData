@@ -1,0 +1,48 @@
+1. App.js 작성
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+
+const App = () => {
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path ='/'/>
+          <Route path ='/today'/>
+          <Route path ='/developer'/>
+          <Route path ='/webd'/>
+          <Route path ='/gsap'/>
+          <Route path ='/port'/>
+          <Route path ='/youtube'/>
+          <Route path ='/channel/:channelID'/>
+          <Route path ='/vidio/:videoID'/>
+          <Route path ='/serach/:searchID'/>
+          <Route path ='/*'/> => 아무것도 없는 패이지
+        </Routes>
+      </BrowserRouter>
+    </>
+  )
+}
+=> 각각의 페이지로 존재
+
+<Route pate='/' element={<Home/>}/>
+해당 페이지에서는 Home 요소(컴포넌트)를 불러옴 => 대문자로 시작
+
+<BrowserRouter>
+        <Routes>
+          <Route path ='/' element={<Home/>}/> 메인페이지
+          <Route path ='/today' element={<Today/>}/> 
+          <Route path ='/developer' element={<Developer/>}/>
+          <Route path ='/webd' element={<Webd/>}/>
+          <Route path ='/website' element={<Website/>}/>
+          <Route path ='/gsap' element={<Gsap/>}/>
+          <Route path ='/port' element={<Port/>}/>
+          <Route path ='/youtube' element={<Youtube/>}/>
+          <Route path ='/channel/:channelID' element={<Channel/>}/>
+          <Route path ='/vidio/:videoID' element={<Video/>}/>
+          <Route path ='/serach/:searchID' element={<Search/>}/>
+          <Route path ='*'/>
+        </Routes>
+</BrowserRouter>
+
+2. src/pages폴더 => 위에서 작성한 페이지들을 실제 파일로(.jsx => html + xml)
+Home.jsx
