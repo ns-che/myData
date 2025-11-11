@@ -5,12 +5,64 @@
 const Header = () => {
     return (
         <header id='header' role="banner">
-            <div className="header__logo"></div>
-            <div className="header__menu"></div>
+            <div className="header__logo"></div> 로고
+            <div className="header__menu"></div> 내부 사이트 네비게이션 버튼
+            <div className="header__sns"></div> 외부 사이트 네비게이션 버튼
         </header>
     )
 }
 
-react icon 패키지 사용
-
+아이콘 사용 => react-icons 패키지 설치 후 사용 가능
 <CiBaseball />
+
+2. scss 작성
+src/assets/scss/section _header.scss => style.scss에 @import
+.header__logo{} 
+.header__menu{}
+.header__sns {}
+
+tab키 눌렀을 때의 디자인도 생각해야함
+변수 등록 -> _vars.scss => css 방식 => --변수명
+변수 사용 -> var(--변수명)
+
+애니메이션 활용
+animation: ani 10s 1s ease-in-out infinite;
+
+@keyframes ani{
+    0% {} 시작
+    50% {} 중간
+    100% {} 끝
+}
+
+1rem => 루트의 값의 1배수
+ex) 루트가 16px 폰트면 2rem은 32px
+
+기존 css
+.header__menu .menu li a svg { }
+.header__menu .menu li a:hover { }
+
+scss
+.header__menu{
+    .menu{
+        li{
+            a{
+                svg{                 
+                }
+                &:hover{
+                }
+            }
+        }
+    }
+}
+
+& => 해당 부분에 붙은 경우를 뜻함
+ex) class1.class2, class1:hover
+
+색깔바꾸기 팁
+#fff 입력후 옆의 색을 누르면 파레트에서 색상지정 가능
+
+사용자가 ui 선택후 해당 ui가 선택되었음을 계속 표시하려면 html에 class 태그가 필요
+
+3. 웹페이지 보면서 수정
+개발자 도구를 연뒤
+밑의 css 요소를 클릭하고 값을 수정하거나 추가 삭제

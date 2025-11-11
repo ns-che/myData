@@ -14,6 +14,15 @@ pr10 => padding-right:10px;
 ta => text-align:left[placeholder위치];
 tar => text-align:right;
 tac => text-align:center;
+db => display: block;
+di => display: inline;
+dib => display: inline-block;
+fz20 => font-size:20px;
+lh1 => line-height:1;
+fw900 => font-weight:900;
+tt => text-transform: uppercase;
+ttl => text-transform: lowercase;
+m10-a => margin 10 auto;
 
 커스텀 스니펫
 tool 프로그램 쉽게 다루기/vscode.txt 읽기
@@ -44,6 +53,10 @@ relative	자기 자리 기준 이동, normal flow
 absolute	부모 기준 절대 위치, normal flow 아님
 fixed	뷰포트 기준 절대 위치, normal flow 아님 => 스크롤 내리거나 해도 딱 붙어있음
 
+부모에 position을 명시적으로(static은 제외) 주는 이유는, 자식 absolute 요소의 기준을 명확히 부모로 지정하기 위해서
+=> 지정하지 않을 경우 viewport(root)가 부모가 되버림
+=> 그 중 relative는 static과 마찬가지로 normal flow를 그대로 가져가므로 ui에 변화가 없음 => 많이 사용되는 이유라 생각
+
 normal flow : 기본 규칙대로 순서에 맞춰 배치
 block: 수직으로 쌓임(크기(width, height) 지정 가능)
 inline: 수평으로 이어짐(크기 지정 불가) => margin padding은 글자 블록(line-box) 기준(line-height - https://velog.io/@ursr0706/line-height-%EC%86%8D%EC%84%B1
@@ -56,3 +69,14 @@ span	inline
 img	inline-block
 section	block
 button	inline-block
+
+부모가 인라인(display: inline)이라도 자식이 block이면 블록의 특성을 가짐
+
+4. 컨텐츠
+background:url('https://images.unsplash.com/photo-1516919549054-e08258825f80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')no-repeat center center;
+=> 배경 이미지 적용
+backdrop-filter: blur(10px);
+=> 블러필터적용 => 해당 블록 뒤의 요소가 흐리게 보임
+=> 뒤의 요소가 단색으로만 구성된 경우 눈에 띄지 않음
+=> 값이 클수록 흐림정도가 강해짐
+=> 블러필터는 투명도를 가지고 있어야함(background color가 있더라도 투명도가 있어야함

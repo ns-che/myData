@@ -1,3 +1,5 @@
+0. front-react-youtube header에 스크롤바 아래쪽이 디자인 별로임
+
 1. git fork된거 fetch후 merge 그리고 최신 데이터 받아오는 법
 
 2. VSCode
