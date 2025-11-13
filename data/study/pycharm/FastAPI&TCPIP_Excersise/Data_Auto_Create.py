@@ -106,12 +106,12 @@ def random_machine(data_func, time_sec, start, end, type):
 
 def start():
     machine1 = threading.Thread(target=random_machine, args=(random_value1, 1, 1, 3, 1))
-    # machine2 = threading.Thread(target=random_machine, args=(random_value2, 2, 1, 3, 2))
+    machine2 = threading.Thread(target=random_machine, args=(random_value2, 2, 1, 3, 2))
 
     machine1.start()
-    # machine2.start()
+    machine2.start()
 
     machine1.join()
-    # machine2.join()
+    machine2.join()
 
 start()

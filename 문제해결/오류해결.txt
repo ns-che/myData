@@ -1,4 +1,13 @@
 1. 분명히 문제 없는 코드인데 문제가 있다고 나옴
 Already included file name 'c:/Users/user/project/frontend/react_youtube/Project/web-youtube/src/pages/Youtube.jsx' differs from file name 'c:/Users/user/project/frontend/react_youtube/Project/web-youtube/src/pages/youtube.jsx' only in casing. The file is in the program because: Imported via './pages/Youtube' from file 'c:/Users/user/project/frontend/react_youtube/Project/web-youtube/src/App.js' Root file specified for compilationts(1261)
-=> 캐싱(casing)이 잘못된 상태임. 껐다 키면 해결
+=> 프로그램 상 캐싱(casing)이 잘못된 상태임. 껐다 키면 해결
+
+2. 멀티 스레드 socket 통신에서 json파일이 왔다갔다하는데 json.load()에서 에러가 남
+red = re.findall(r'\{.*?\}', data)
+        for x in red:
+            print(x)
+활용해서 해결
+=> json 데이터가 너무 빨리오다보면 socket.recv에서 여러 json이 합쳐진 결과를 받을 때가 있음 이때 오류가 발생
+해결책
+regex활용해서 그 데이터를 나눠버린다
 
